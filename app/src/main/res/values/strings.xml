@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Blackjack</string>
+
+    <string name="about_game">This app is a light version of the card game Blackjack. In this app the player will only play against the dealer. </string>
+    <string name="about_devs">Designed by Caleb M. and Jessica M. students of APSU\'s computer science degree program.</string>
+    <string name="credit">Credit for sounds and images found in this application go to:  </string>
+
+    <string name="playerWins">Player Wins!</string>
+    <string name="dealerWins">Dealer Wins!</string>
+
+    <string name="d_first">dealer\'s 1st card</string>
+    <string name="d_second">dealer\'s 2nd card</string>
+    <string name="p_first">player\'s 1st card</string>
+    <string name="p_second">player\'s 2nd card</string>
+
+    <string name="hit">Hit</string>
+    <string name="stay">Stay</string>
+
+    <string name="p_first_hit">player\'s 1st hit</string>
+    <string name="p_second_hit">player\'s 2nd hit</string>
+    <string name="p_third_hit">player\'s 3rd hit</string>
+    <string name="p_fourth_hit">player\'s 4th hit</string>
+    <string name="p_fifth_hit">player\'s 5th hit</string>
+
+</resources>
