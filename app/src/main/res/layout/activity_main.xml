@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/cards_iv"
-        android:layout_width="417dp"
+        android:layout_width="wrap_content"
         android:layout_height="144dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -17,7 +17,6 @@
         android:layout_marginBottom="8dp"
         android:paddingHorizontal="30dp"
         android:src="@drawable/cardpic"
-        app:layout_constraintBottom_toTopOf="@+id/how_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +25,7 @@
 
     <ImageView
         android:id="@+id/game_iv"
-        android:layout_width="417dp"
+        android:layout_width="wrap_content"
         android:layout_height="198dp"
         android:paddingHorizontal="30dp"
         android:src="@drawable/game"
@@ -34,11 +33,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <Button
         android:id="@+id/how_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="174dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="#00750907"
@@ -49,9 +49,12 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/play_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cards_iv"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <ImageButton
+    <Button
         android:id="@+id/play_btn"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
@@ -67,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
+    <Button
         android:id="@+id/about_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,5 +86,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
