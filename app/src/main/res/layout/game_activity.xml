@@ -57,36 +57,40 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
+    <Button
         android:id="@+id/hit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/player2"
-        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#37000001"
+        android:background="@drawable/buttons"
+        android:fontFamily="@font/adamina"
+        android:padding="10dp"
         android:text="@string/hit"
+        android:textSize="18dp"
+        android:textStyle="bold"
         android:textColor="#FFF"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <Button
         android:id="@+id/stay_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:layout_toEndOf="@+id/hit_button"
-        android:background="#37000001"
+        android:background="@drawable/buttons"
+        android:fontFamily="@font/adamina"
+        android:padding="10dp"
         android:text="@string/stay"
+        android:textSize="18dp"
+        android:textStyle="bold"
         android:textColor="#FFF"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -168,14 +172,16 @@
         android:layout_below="@+id/dealer2"
         android:layout_alignStart="@+id/player4"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="352dp"
+        android:layout_marginBottom="8dp"
         android:text=""
+        android:textColor="#FFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/dealer3"
@@ -239,6 +245,8 @@
         android:id="@+id/playerText"
         android:layout_width="60dp"
         android:layout_height="30dp"
+        android:textColor="#FFF"
+        android:textSize="18dp"
         android:layout_alignStart="@+id/dealer1"
         android:layout_alignTop="@+id/winText"
         android:layout_marginStart="8dp"
@@ -251,8 +259,11 @@
 
     <TextView
         android:id="@+id/dealerText"
+        android:background="@null"
         android:layout_width="60dp"
         android:layout_height="30dp"
+        android:textColor="#FFF"
+        android:textSize="18dp"
         android:layout_alignEnd="@+id/player7"
         android:layout_alignBottom="@+id/winText"
         android:layout_marginStart="8dp"

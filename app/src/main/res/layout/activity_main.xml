@@ -15,22 +15,22 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:paddingHorizontal="30dp"
         android:src="@drawable/cardpic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/game_iv"
+        android:contentDescription="@string/twenty_one"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/game_iv"
         android:layout_width="0dp"
         android:layout_height="198dp"
-        android:paddingHorizontal="30dp"
         android:src="@drawable/game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -38,53 +38,59 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="174dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        android:background="@null"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttons"
         android:fontFamily="@font/adamina"
-        android:text="How to play"
+        android:padding="10dp"
+        android:text="@string/how_btn"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/play_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cards_iv"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/cards_iv" />
 
     <Button
         android:id="@+id/play_btn"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        android:background="@null"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttons"
         android:fontFamily="@font/adamina"
-        android:text="Deal me in"
+        android:padding="10dp"
+        android:text="@string/play_btn"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/about_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/how_btn" />
 
     <Button
         android:id="@+id/about_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="64dp"
-        android:background="@null"
-        android:contentDescription="Play"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/buttons"
+        android:contentDescription="@string/about_btn"
         android:fontFamily="@font/adamina"
-        android:text="About"
+        android:padding="10dp"
+        android:text="@string/about_btn"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play_btn" />
 
 
 </android.support.constraint.ConstraintLayout>

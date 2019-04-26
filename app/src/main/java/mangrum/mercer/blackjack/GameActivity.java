@@ -3,7 +3,9 @@ package mangrum.mercer.blackjack;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +14,7 @@ import java.util.Random;
 public class GameActivity extends Activity implements View.OnClickListener {
 
 
-    private static int deck[] = {R.drawable.ace_clubs, R.drawable.ace_diamonds, R.drawable.ace_hearts, R.drawable.ace_spades,
+    private static int[] deck = {R.drawable.ace_clubs, R.drawable.ace_diamonds, R.drawable.ace_hearts, R.drawable.ace_spades,
             R.drawable.clubs_2, R.drawable.clubs_3, R.drawable.clubs_4, R.drawable.clubs_5,
             R.drawable.clubs_6, R.drawable.clubs_7, R.drawable.clubs_8, R.drawable.clubs_9,
             R.drawable.clubs_10, R.drawable.jack_clubs, R.drawable.king_clubs, R.drawable.queen_clubs,
@@ -38,11 +40,19 @@ public class GameActivity extends Activity implements View.OnClickListener {
     boolean playStood = false;
     private int dealerCards = 0;
     private int playerCards = 0;
-    private int dealerDealt[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    private int playerDealt[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    private int[] dealerDealt = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    private int[] playerDealt = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        // Set no title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //Make full screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
         ImageView dealer = findViewById(R.id.dealer1);
@@ -70,7 +80,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
         deckSize--;
         winCheck(playerDealt, dealerDealt);
 
-        ImageButton b = findViewById(R.id.hit_button);
+        Button b = findViewById(R.id.hit_button);
         b.setOnClickListener(this);
 
         b = findViewById(R.id.stay_button);
@@ -84,7 +94,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
         TextView tv = findViewById(R.id.winText);
         TextView pText = findViewById(R.id.playerText);
         TextView dText = findViewById(R.id.dealerText);
-        ImageButton b = findViewById(R.id.hit_button);
+        Button b = findViewById(R.id.hit_button);
         for (int i = 0; i < pCards.length; i++) {
             if (R.drawable.spades_2 == pCards[i] || R.drawable.hearts_2 == pCards[i]
                     || R.drawable.clubs_2 == pCards[i] || R.drawable.diamonds_2 == pCards[i]) {
@@ -272,7 +282,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
         }
         if (v.getId() == R.id.stay_button) {
             playStood = true;
-            ImageButton b = findViewById(R.id.hit_button);
+            Button b = findViewById(R.id.hit_button);
             b.setEnabled(false);
             dealer = findViewById(R.id.dealer2);
             dealer.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
@@ -326,7 +336,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
         }
     }
 
-    public void shuffle(int shuffled[]) {
+    public void shuffle(int[] shuffled) {
         for (int j = 0; j < 1000000; j++) {
             int temp = shuffled[rand1];
             shuffled[rand1] = shuffled[rand2];

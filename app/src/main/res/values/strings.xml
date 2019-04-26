@@ -5,6 +5,13 @@
     <string name="about_devs">Designed by Caleb M. and Jessica M. students of APSU\'s computer science degree program.</string>
     <string name="credit">Credit for sounds and images found in this application go to:  </string>
 
+    <string name="title">BlackJack</string>
+    <string name="twenty_one">Twenty One</string>
+
+    <string name="how_btn">How To Play</string>
+    <string name="play_btn">Deal Me In</string>
+    <string name="about_btn">About</string>
+
     <string name="playerWins">Player Wins!</string>
     <string name="dealerWins">Dealer Wins!</string>
 
