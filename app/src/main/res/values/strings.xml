@@ -14,19 +14,29 @@
 
     <string name="playerWins">Player Wins!</string>
     <string name="dealerWins">Dealer Wins!</string>
+    <string name="deck">Deck</string>
+    <string name="card1">Deck Card 1</string>
+    <string name="card2">Deck Card 2</string>
 
-    <string name="d_first">dealer\'s 1st card</string>
-    <string name="d_second">dealer\'s 2nd card</string>
-    <string name="p_first">player\'s 1st card</string>
-    <string name="p_second">player\'s 2nd card</string>
+    <string name="d_1st">dealer\'s 1st card</string>
+    <string name="d_2nd">dealer\'s 2nd card</string>
+    <string name="p_1st">player\'s 1st card</string>
+    <string name="p_2nd">player\'s 2nd card</string>
 
     <string name="hit">Hit</string>
     <string name="stay">Stay</string>
 
-    <string name="p_first_hit">player\'s 1st hit</string>
-    <string name="p_second_hit">player\'s 2nd hit</string>
-    <string name="p_third_hit">player\'s 3rd hit</string>
-    <string name="p_fourth_hit">player\'s 4th hit</string>
-    <string name="p_fifth_hit">player\'s 5th hit</string>
+    <string name="d_1st_hit">dealer\'s 1st hit</string>
+    <string name="d_2nd_hit">dealer\'s 2nd hit</string>
+    <string name="d_3rd_hit">dealer\'s 3rd hit</string>
+    <string name="d_4th_hit">dealer\'s 4th hit</string>
+    <string name="d_5th_hit">dealer\'s 5th hit</string>
+
+    <string name="p_1st_hit">player\'s 1st hit</string>
+    <string name="p_2nd_hit">player\'s 2nd hit</string>
+    <string name="p_3rd_hit">player\'s 3rd hit</string>
+    <string name="p_4th_hit">player\'s 4th hit</string>
+    <string name="p_5th_hit">player\'s 5th hit</string>
+
 
 </resources>
