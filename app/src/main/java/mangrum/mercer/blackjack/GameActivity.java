@@ -35,6 +35,8 @@ public class GameActivity extends Activity implements View.OnClickListener {
     int deckSize = 52;
     int rand1 = r.nextInt(52);
     int rand2 = r.nextInt(52);
+    int bet = 0;
+    int chips = 1000;
     int hit = 0;
     int dealHit = 0;
     int dealerScore = 0;
@@ -88,6 +90,11 @@ public class GameActivity extends Activity implements View.OnClickListener {
 
         b = findViewById(R.id.stay_button);
         b.setOnClickListener(this);
+
+        b = findViewById(R.id.deal_button);
+        b.setOnClickListener(this);
+        b.setEnabled(false);
+        b.setVisibility(View.INVISIBLE);
     }
 
     public void winCheck(int[] pCards, int[] dCards) {
@@ -147,13 +154,13 @@ public class GameActivity extends Activity implements View.OnClickListener {
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
-            rebuy();
+            showDeal();
         } else if (pTotal > 21) {
             tv.setText(R.string.dealerWins);
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
-            rebuy();
+            showDeal();
         }
 
         for (int i = 0; i < dCards.length; i++) {
@@ -225,19 +232,19 @@ public class GameActivity extends Activity implements View.OnClickListener {
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
-            rebuy();
+            showDeal();
         } else if (dTotal > 21) {
             tv.setText(R.string.playerWins);
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
-            rebuy();
+            showDeal();
         } else if (dTotal == pTotal && playStood) {
             tv.setText(R.string.playerWins);
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
-            rebuy();
+            showDeal();
         }
     }
 
@@ -292,6 +299,8 @@ public class GameActivity extends Activity implements View.OnClickListener {
             playStood = true;
             Button b = findViewById(R.id.hit_button);
             b.setEnabled(false);
+            b = findViewById(R.id.stay_button);
+            b.setEnabled(false);
             dealer = findViewById(R.id.dealer2);
             dealer.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
             dealerDealt[dealerCards] = deck[deckSize - 1];
@@ -342,6 +351,9 @@ public class GameActivity extends Activity implements View.OnClickListener {
                 }
             }
         }
+        if(v.getId() == R.id.deal_button){
+            redeal();
+        }
     }
 
     public void shuffle(int[] shuffled) {
@@ -354,7 +366,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
         }
         deck = shuffled;
     }
-    public void rebuy(){
+    public void redeal(){
         ImageView iv;
         Button b;
         TextView tv;
@@ -364,6 +376,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
         b.setEnabled(true);
         b = findViewById(R.id.hit_button);
         b.setEnabled(true);
+        hideDeal();
         deckSize = 52;
         playerCards = 0;
         dealerCards = 0;
@@ -379,7 +392,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
         for(int i = 0; i < 7; i++){
             dealerDealt[i] = 0;
             playerDealt[i] = 0;
-            if(i >=2) {
+            if(i >= 2) {
                 iv = findViewById(playerSlots[i]);
                 iv.setVisibility(View.INVISIBLE);
                 iv = findViewById(dealerSlots[i]);
@@ -388,18 +401,37 @@ public class GameActivity extends Activity implements View.OnClickListener {
         }
         iv = findViewById(playerSlots[0]);
         iv.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
+        playerDealt[playerCards] = deck[deckSize - 1];
         playerCards++;
         deckSize--;
+        winCheck(playerDealt, dealerDealt);
         iv = findViewById(playerSlots[1]);
         iv.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
+        playerDealt[playerCards] = deck[deckSize - 1];
         playerCards++;
         deckSize--;
+        winCheck(playerDealt, dealerDealt);
         iv = findViewById(dealerSlots[0]);
         iv.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
+        dealerDealt[dealerCards] = deck[deckSize - 1];
         dealerCards++;
         deckSize--;
+        winCheck(playerDealt, dealerDealt);
         iv = findViewById(dealerSlots[1]);
         iv.setImageResource(getResources().getIdentifier(String.valueOf(R.drawable.dp_back)
                 , "drawable", getPackageName()));
+        winCheck(playerDealt, dealerDealt);
+    }
+
+    public void showDeal(){
+        Button b = findViewById(R.id.deal_button);
+        b.setVisibility(View.VISIBLE);
+        b.setEnabled(true);
+    }
+
+    public void hideDeal(){
+        Button b = findViewById(R.id.deal_button);
+        b.setVisibility(View.INVISIBLE);
+        b.setEnabled(false);
     }
 }
