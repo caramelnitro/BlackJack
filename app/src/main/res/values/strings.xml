@@ -25,6 +25,7 @@
 
     <string name="hit">Hit</string>
     <string name="stay">Stay</string>
+    <string name="deal">Deal</string>
 
     <string name="d_1st_hit">dealer\'s 1st hit</string>
     <string name="d_2nd_hit">dealer\'s 2nd hit</string>
