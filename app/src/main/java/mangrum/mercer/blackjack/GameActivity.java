@@ -2,6 +2,7 @@ package mangrum.mercer.blackjack;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -28,6 +29,8 @@ public class GameActivity extends Activity implements View.OnClickListener {
             R.drawable.hearts_6, R.drawable.hearts_7, R.drawable.hearts_8, R.drawable.hearts_9,
             R.drawable.hearts_10, R.drawable.jack_hearts, R.drawable.king_hearts, R.drawable.queen_hearts
     };
+    private static int[] dealerSlots = {R.id.dealer1, R.id.dealer2, R.id.dealer3, R.id.dealer4, R.id.dealer5, R.id.dealer6, R.id.dealer7};
+    private static int[] playerSlots = {R.id.player1, R.id.player2, R.id.player3, R.id.player4, R.id.player5, R.id.player6, R.id.player7};
     Random r = new Random();
     int deckSize = 52;
     int rand1 = r.nextInt(52);
@@ -144,11 +147,13 @@ public class GameActivity extends Activity implements View.OnClickListener {
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
+            rebuy();
         } else if (pTotal > 21) {
             tv.setText(R.string.dealerWins);
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
+            rebuy();
         }
 
         for (int i = 0; i < dCards.length; i++) {
@@ -220,16 +225,19 @@ public class GameActivity extends Activity implements View.OnClickListener {
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
+            rebuy();
         } else if (dTotal > 21) {
             tv.setText(R.string.playerWins);
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
+            rebuy();
         } else if (dTotal == pTotal && playStood) {
             tv.setText(R.string.playerWins);
             b.setEnabled(false);
             b = findViewById(R.id.stay_button);
             b.setEnabled(false);
+            rebuy();
         }
     }
 
@@ -292,7 +300,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
             while (dealerScore < 17) {
                 dealHit++;
                 if (dealHit == 1) {
-                    dealer = findViewById(R.id.dealer3);
+                    dealer = findViewById(R.id.player3);
                     dealer.setVisibility(View.VISIBLE);
                     dealer.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
                     dealerDealt[dealerCards] = deck[deckSize - 1];
@@ -345,5 +353,53 @@ public class GameActivity extends Activity implements View.OnClickListener {
             rand2 = r.nextInt(52);
         }
         deck = shuffled;
+    }
+    public void rebuy(){
+        ImageView iv;
+        Button b;
+        TextView tv;
+        tv = findViewById(R.id.winText);
+        tv.setVisibility(View.INVISIBLE);
+        b = findViewById(R.id.stay_button);
+        b.setEnabled(true);
+        b = findViewById(R.id.hit_button);
+        b.setEnabled(true);
+        deckSize = 52;
+        playerCards = 0;
+        dealerCards = 0;
+        dealHit = 0;
+        hit = 0;
+        dealAces = false;
+        playAces = false;
+        playStood = false;
+        rand1 = r.nextInt(52);
+        rand2 = r.nextInt(52);
+        shuffle(deck);
+        shuffle(deck);
+        for(int i = 0; i < 7; i++){
+            dealerDealt[i] = 0;
+            playerDealt[i] = 0;
+            if(i >=2) {
+                iv = findViewById(playerSlots[i]);
+                iv.setVisibility(View.INVISIBLE);
+                iv = findViewById(dealerSlots[i]);
+                iv.setVisibility(View.INVISIBLE);
+            }
+        }
+        iv = findViewById(playerSlots[0]);
+        iv.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
+        playerCards++;
+        deckSize--;
+        iv = findViewById(playerSlots[1]);
+        iv.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
+        playerCards++;
+        deckSize--;
+        iv = findViewById(dealerSlots[0]);
+        iv.setImageResource(getResources().getIdentifier(String.valueOf(deck[deckSize - 1]), "drawable", getPackageName()));
+        dealerCards++;
+        deckSize--;
+        iv = findViewById(dealerSlots[1]);
+        iv.setImageResource(getResources().getIdentifier(String.valueOf(R.drawable.dp_back)
+                , "drawable", getPackageName()));
     }
 }
