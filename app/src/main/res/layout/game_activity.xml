@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="295dp"
         android:layout_marginEnd="16dp"
         android:background="#802B0808"
         android:contentDescription="@string/deck"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="295dp"
         android:layout_marginEnd="12dp"
         android:background="#802B0808"
         android:contentDescription="@string/card1"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="295dp"
         android:layout_marginEnd="8dp"
         android:background="#802B0808"
         android:contentDescription="@string/card2"
@@ -375,25 +375,22 @@
 
     <Button
         android:id="@+id/deal_button"
+        android:layout_height="150dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="285dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/buttons"
         android:fontFamily="sans-serif"
         android:padding="10dp"
         android:text="@string/deal"
+        android:textAlignment="center"
         android:textColor="#FFF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/winText"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/deck2"
+        app:layout_constraintEnd_toEndOf="@+id/deck2"
         app:layout_constraintStart_toStartOf="@+id/deck2"
-        app:layout_constraintTop_toTopOf="@+id/deck2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/deck2" />
 
 
 </android.support.constraint.ConstraintLayout>

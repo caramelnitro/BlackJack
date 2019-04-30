@@ -3,7 +3,7 @@
 
     <string name="about_game">This app is a light version of the card game Blackjack. In this app the player will only play against the dealer. </string>
     <string name="about_devs">Designed by Caleb M. and Jessica M. students of APSU\'s computer science degree program.</string>
-    <string name="credit">Credit for sounds and images found in this application go to:  </string>
+    <string name="credit">Credit for images found in this application go to: www.freeiconspng.com  </string>
 
     <string name="title">BlackJack</string>
     <string name="twenty_one">Twenty One</string>

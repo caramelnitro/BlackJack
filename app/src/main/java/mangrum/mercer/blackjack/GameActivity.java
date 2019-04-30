@@ -2,7 +2,6 @@ package mangrum.mercer.blackjack;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -218,11 +217,10 @@ public class GameActivity extends Activity implements View.OnClickListener {
             dealerScore += 10;
         }
         if (dTotal == 21) {
-            /*placeholder code so there are less warnings*/
+
             dTotal = 21;
             dealerScore += 21;
         } else if (dTotal > 21) {
-            /*placeholder code so there are less warnings*/
             dTotal = 22;
             dealerScore += 22;
         }
